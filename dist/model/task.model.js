@@ -22,19 +22,41 @@ __decorate([
 __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)
-], Task.prototype, "client_name", void 0);
-__decorate([
-    (0, typeorm_1.Column)(),
-    __metadata("design:type", String)
-], Task.prototype, "client_phone_number", void 0);
-__decorate([
-    (0, typeorm_1.Column)(),
-    __metadata("design:type", String)
-], Task.prototype, "client_email", void 0);
-__decorate([
-    (0, typeorm_1.Column)(),
-    __metadata("design:type", String)
 ], Task.prototype, "client_code", void 0);
+__decorate([
+    (0, typeorm_1.Column)(),
+    __metadata("design:type", String)
+], Task.prototype, "task_title", void 0);
+__decorate([
+    (0, typeorm_1.Column)(),
+    __metadata("design:type", String)
+], Task.prototype, "task_description", void 0);
+__decorate([
+    (0, typeorm_1.Column)(),
+    __metadata("design:type", Number)
+], Task.prototype, "word_limit", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ type: "date" }),
+    __metadata("design:type", String)
+], Task.prototype, "client_deadline", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ type: "date" }),
+    __metadata("design:type", String)
+], Task.prototype, "content_writer_deadline", void 0);
+__decorate([
+    (0, typeorm_1.Column)({
+        type: "enum",
+        enum: [
+            "Not Started",
+            "Ready",
+            "In Progress",
+            "PR Done",
+            "Delivered",
+            "Proof Reading",
+        ],
+    }),
+    __metadata("design:type", String)
+], Task.prototype, "status", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", Number)
@@ -43,6 +65,14 @@ __decorate([
     (0, typeorm_1.Column)("simple-array"),
     __metadata("design:type", Array)
 ], Task.prototype, "content_writer_id", void 0);
+__decorate([
+    (0, typeorm_1.Column)("simple-array"),
+    __metadata("design:type", Array)
+], Task.prototype, "link", void 0);
+__decorate([
+    (0, typeorm_1.Column)("simple-array"),
+    __metadata("design:type", Array)
+], Task.prototype, "attachment", void 0);
 __decorate([
     (0, typeorm_1.OneToMany)(() => comment_model_1.Comment, (comment) => comment.task),
     __metadata("design:type", Array)

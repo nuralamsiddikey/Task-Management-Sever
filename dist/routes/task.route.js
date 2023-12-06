@@ -4,9 +4,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
+const task_1 = require("../controller/task");
+const multer_1 = __importDefault(require("../middlewares/multer"));
 const router = express_1.default.Router();
-const client_route_1 = __importDefault(require("./client.route"));
-const task_route_1 = __importDefault(require("./task.route"));
-router.use('/client', client_route_1.default);
-router.use('/task', task_route_1.default);
+router.post("/add", multer_1.default.array('attachment', 10), task_1.addTask);
+router.get('/get', task_1.getAllTask);
+router.get('/get/:id', task_1.getTaskById);
 exports.default = router;
